@@ -1,0 +1,14 @@
+Byte Offset	Length (bytes)	Description	Interpretation Formula / Notes
+0–3	4	Frame Header	Always 0xAA 0xFF 0x03 0x00
+4–5	2	X Position (int16_t)	`X = (b4
+6–7	2	Y Position (int16_t)	`Y = (b6
+8–9	2	Speed (int16_t)	`Speed = (b8
+10–11	2	Distance Resolution (uint16_t)	`Distance_raw = (b10
+12–27	16	Unused / Reserved	Typically zero for single target
+28–29	2	Frame Tail	Always 0x55 0xCC
+
+Calculated Fields
+Field	Formula / Derivation
+Distance	sqrt(x² + y²) → in mm, convert to meters by / 1000.0
+Angle	atan2(x, y) * 180 / PI → angle from X-axis in degrees
+Filtering	Discard if: all values match previous, Y == -32768, Speed == -16, or Distance > 12.0 m
