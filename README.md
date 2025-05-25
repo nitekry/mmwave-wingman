@@ -13,19 +13,19 @@ https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 2. Environmental & Signal Filtering
 - Ignored stale data: Sticky frames after human presence. 
 
-        Frames where all values matched the previous frame (X, Y, speed, distance).
+  Frames where all values matched the previous frame (X, Y, speed, distance).
 
-        Prevented redundant logging and false positives from static environments.
+  Prevented redundant logging and false positives from static environments.
 
 - Discarded invalid readings: In the end ignoring Y completly so this needs some work. 
 
-        Y == -32768 (0x8000): indicates default or garbage value.
+ Y == -32768 (0x8000): indicates default or garbage value.
 
-        Speed == -16 (0x0010 raw): also used as a default placeholder.
+ Speed == -16 (0x0010 raw): also used as a default placeholder.
 
 - Distance cutoff: limiting the alert range to maximum realistic distance. 
 
-        Readings over 12 meters are considered noise and ignored. 
+  Readings over 12 meters are considered noise and ignored. 
 
 3. Adaptive Repeat Filtering
 - Dynamic filtering threshold (repeatCount, maxRepeatThreshold) adjusts based on repeated identical frames.
@@ -42,13 +42,10 @@ https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 
     Serial Print
 
-        Raw frame (hex).
-
-        Distance in meters.
-
-        Angle from X-axis (derived from atan2(x, y)).
-
-        Excluded Y from display for clarity.
+  Raw frame (hex).
+  Distance in meters.
+  Angle from X-axis (derived from atan2(x, y)).
+  Excluded Y from display for clarity.
 
 6. Frame Management
 - Frame validation using header and tail (0xAA 0xFF ... 0x55 0xCC).
