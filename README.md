@@ -52,3 +52,6 @@ https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 - Automatically resets buffer index on overflow or completion.  //a lot of sticky data was causing alerts.
 - Sends single-target detection command every 5 seconds to maintain active polling. //still testing the frequency that works best.
 
+
+![mmwave-device](https://github.com/user-attachments/assets/ae3cfe68-6442-4895-b82e-0178efc00ab0)
+
