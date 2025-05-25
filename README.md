@@ -4,6 +4,8 @@ Using M5 Atom S3 Lite
 
 https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 
+![mmwave_wingman_BETA](https://github.com/user-attachments/assets/a0d314d2-f647-476e-a529-15082bd32ae9)
+
 
 1. Baseline Behavior (Raw Output Only)
 - Printed full RX_BUF frames upon receiving complete radar data.
