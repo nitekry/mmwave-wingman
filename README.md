@@ -1,6 +1,6 @@
 # mmwave-wingman
 Using a mmwave RD-03D 24GHz radar module for stand alone, real-time human detection. 
-
+Using M5 Atom S3 Lite
 
 https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 
