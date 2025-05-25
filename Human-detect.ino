@@ -2,7 +2,7 @@
 
 HardwareSerial RD03Serial(1);
 
-const int RX_PIN = 2;
+const int RX_PIN = 2; 
 const int TX_PIN = 1;
 const int BAUD_RATE = 256000;
 const int BUZZER_PIN = 7;  // External buzzer on pin 7 (active-low)
@@ -26,7 +26,7 @@ void setup() {
   Serial.begin(115200);
   RD03Serial.begin(BAUD_RATE, SERIAL_8N1, RX_PIN, TX_PIN);
   pinMode(BUZZER_PIN, OUTPUT);
-  digitalWrite(BUZZER_PIN, HIGH);  // Keep buzzer silent initially
+  digitalWrite(BUZZER_PIN, HIGH);  // Active 5v Buzzer needs to be set silent from start.
   delay(100);
   sendSingleTargetCommand();
 }
@@ -85,7 +85,7 @@ void loop() {
             lastRes = distance_res;
           }
 
-          bool invalidY = (y == -32768);
+          bool invalidY = (y == -32768); //Y data not required for my purposes of detection around my area.
           bool invalidSpeed = (speed == -16);
 
           if (repeatCount < maxRepeatThreshold && !invalidY && !invalidSpeed && distanceMeters <= 12.0) {
