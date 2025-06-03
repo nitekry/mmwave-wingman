@@ -54,6 +54,11 @@ https://www.digikey.com/en/products/detail/ai-thinker/RD-03D/24614840
 - Automatically resets buffer index on overflow or completion.  //a lot of sticky data was causing alerts.
 - Sends single-target detection command every 5 seconds to maintain active polling. //still testing the frequency that works best.
 
+Updates:
+1. **Strict Static Frame Filtering** | Ignores repeated frames that match previous X, Y, and resolution values - Prevents continued buzzer activation when no actual movement occurs
+2. **Movement Hold Time Logic** | Introduces a `movementHoldTime` of 5 seconds to retain alert briefly - Allows short pauses in movement without instantly silencing the buzzer
+3. **Buzzer Trigger Cleanup** | Buzzer is now triggered only when movement is detected and resets properly - Eliminates lingering buzzing caused by static repeated frames          |
+
 
 ![mmwave-device](https://github.com/user-attachments/assets/ae3cfe68-6442-4895-b82e-0178efc00ab0)
 
